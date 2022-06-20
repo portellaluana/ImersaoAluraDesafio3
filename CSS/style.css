@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;500&display=swap");
+
 body {
   background-color: white;
   font-family: "Roboto Slab", serif;
@@ -17,11 +19,12 @@ h1 strong {
   color: #a36b5b;
 }
 
-img:hover {
-  opacity: 10%;
-  margin: 24px 16px 16px 16px;
-  max-height: 104px;
-  max-width: 104px;
+ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  position: relative;
+  text-align: center;
 }
 
 img {
@@ -41,7 +44,7 @@ input {
   color: #8e5644;
 }
 
-button {
+#botaoAdicionar {
   background-color: white;
   border: 1px solid #a36b5b;
   border-radius: 4px;
@@ -52,7 +55,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+#botaoAdicionar:hover {
   background-color: #8e5644;
   border: none;
   border-radius: 4px;
@@ -60,5 +63,28 @@ button:hover {
   font-weight: 600;
   width: 96px;
   height: 48px;
+  cursor: pointer;
+}
+
+.remover {
+  background-color: white;
+  border: 1px solid #a36b5b;
+  border-radius: 4px;
+  color: #a36b5b;
+  font-weight: 600;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  float: right;
+}
+
+.remover:hover {
+  background-color: #a36b5b;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: 600;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
 }

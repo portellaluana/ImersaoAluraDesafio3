@@ -1,28 +1,33 @@
-// imagens default
-let listaImagens = [
-  "https://cdn-icons-png.flaticon.com/512/4771/4771681.png",
-  "https://cdn-icons-png.flaticon.com/512/4771/4771420.png",
-  "https://cdn-icons-png.flaticon.com/512/4771/4771549.png",
-];
+const listaImagens = document.querySelector("#listaImagens");
+const caixaTexto = document.querySelector("#caixaDeTexto");
+const botaoAdicionar = document.querySelector("#botaoAdicionar");
 
-let elementoListaInput = document.getElementById("listaImagens");
+botaoAdicionar.addEventListener("click", function () {
+  const linkImagem = caixaTexto.value;
+  caixaTexto.value = "";
 
-// imagens default
-for (let i = 0; i < listaImagens.length; i++) {
-  let elementoNovoInput = "<img src=" + listaImagens[i] + ">";
-  elementoListaInput.innerHTML =
-    elementoListaInput.innerHTML + elementoNovoInput;
+  listaImagens.appendChild(adicionarImagem(linkImagem));
+});
+
+function adicionarImagem(linkImagem) {
+  const elementoLi = document.createElement("li");
+  const elementoSPAN = document.createElement("img");
+
+  elementoSPAN.setAttribute("src", linkImagem);
+
+  elementoLi.appendChild(elementoSPAN);
+  elementoLi.appendChild(adicionaBotaoRemover());
+  return elementoLi;
 }
 
-// função para adicionar imagens
-function Adicionar() {
-  let campoNovoInput = document.getElementById("Input").value;
-  if (campoNovoInput.endsWith(".png")) {
-    let elementoNovoInput = "<img src=" + campoNovoInput + ">";
-    elementoListaInput = document.getElementById("listaImagens");
-    elementoListaInput.innerHTML =
-      elementoListaInput.innerHTML + elementoNovoInput;
-  }
+function adicionaBotaoRemover() {
+  const botaoRemover = document.createElement("button");
+  botaoRemover.textContent = "x";
+  botaoRemover.className = "remover";
 
-  document.getElementById("Input").value = "";
+  botaoRemover.addEventListener("click", function () {
+    listaImagens.removeChild(this.parentNode);
+  });
+
+  return botaoRemover;
 }
