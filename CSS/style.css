@@ -19,20 +19,6 @@ h1 strong {
   color: #a36b5b;
 }
 
-ul {
-  display: flex;
-  list-style: none;
-  justify-content: center;
-  position: relative;
-  text-align: center;
-}
-
-img {
-  margin: 24px 16px 16px 16px;
-  max-height: 104px;
-  max-width: 104px;
-}
-
 input {
   margin: 32px 16px;
   border: 1px solid #a36b5b;
@@ -87,4 +73,19 @@ input {
   width: 24px;
   height: 24px;
   cursor: pointer;
+}
+
+.lista-das-imagens ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  text-align: center;
+}
+
+.lista-das-imagens img {
+  margin: 24px 16px 16px 16px;
+  max-height: 104px;
+  max-width: 104px;
 }
